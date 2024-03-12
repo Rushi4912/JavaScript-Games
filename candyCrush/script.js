@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
      const grid = document.querySelector(".grid");
      const width = 8;
      const squares = [];
-     const candyColor = [
+     const candyColors = [
           'red',
           'yellow',
           'orange',
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                const square = document.createElement('div');
                square.setAttribute('draggable', true); // for dragging the square
                square.setAttribute('id', i);
-               const randomColor = Math.floor(Math.random() * candyColor.length);
-               square.style.backgroundColor = candyColor[randomColor];
+               const randomColor = Math.floor(Math.random() * candyColors.length);
+               square.style.backgroundColor = candyColors[randomColor];
                grid.appendChild(square);
                squares.push(square);
           }
@@ -136,6 +136,26 @@ document.addEventListener('DOMContentLoaded', () => {
      }
      checkColumnForThree();
 
+     // drop candies
+
+     function moveDown() {
+          
+          for (let i = 0; i < 55; i++){
+
+               if (squares[i + width].style.backgroundColor === '') {
+                    
+                    squares[i + width].style.backgroundColor = squares[i].style.backgroundColor;
+                    squares[i].style.backgroundColor = '';
+                    const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
+                    const isFirstRow = firstRow.includes(i);
+                    if (isFirstRow && squares[i].style.backgroundColor === '') {
+                         letRandomColor = Math.floor(Math.random() * candyColors.length);
+                         squares[i].style.backgroundColor = candyColors[randomColor];
+                    }
+               }
+          }
+     }
+
 
      // check for row of four
       function checkRowForFour() {
@@ -191,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
    
 
      window.setInterval(function () {
+          moveDown();
           checkRowForThree();
           checkColumnForThree();
           checkColumnForFour();
