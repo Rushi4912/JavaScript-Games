@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
           'green',
           'blue'
      ]
+     let score = 0;
 
      // create a board
      function createBoard() {
@@ -95,14 +96,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                let rowOfThree = [i, i + 1, i + 2];
                let decideColor = squares[i].style.backgroundColor;
-               const isBlank = squares[i].style.backgroundColor = '';
+               const isBlank = squares[i].style.backgroundColor ==='';
 
                if (rowOfThree.every(index => squares[index].style.backgroundColor === decideColor && !isBlank)) {
-                    
+                    score += 3;
                     rowOfThree.forEach(index => {
                          squares[index].style.backgroundColor = '';
                     })
                }
           }
      }
+     checkRowForThree();
+     window.setInterval(function () {
+          checkRowForThree();
+     }, 100);
 })
