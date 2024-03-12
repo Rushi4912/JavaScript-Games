@@ -1,16 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
      
      const grid = document.querySelector(".grid");
+     const scoreDisplay = document.getElementById('score');
      const width = 8;
      const squares = [];
      const candyColors = [
-          'red',
-          'yellow',
-          'orange',
-          'purple',
-          'green',
-          'blue'
-     ]
+       "url(images/red-candy.png)",
+       "url(images/yellow-candy.png)",
+       "url(images/orange-candy.png)",
+       "url(images/purple-candy.png)",
+       "url(images/green-candy.png)",
+       "url(images/blue-candy.png)",
+     ];
      let score = 0;
 
      // create a board
@@ -107,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                if (rowOfThree.every(index => squares[index].style.backgroundColor === decideColor && !isBlank)) {
                     score += 3;
+                    scoreDisplay.innerHTML = score;
                     rowOfThree.forEach(index => {
                          squares[index].style.backgroundColor = '';
                     })
@@ -127,7 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
                squares[index].style.backgroundColor === decideColor && !isBlank
            )
          ) {
-           score += 3;
+            score += 3;
+            scoreDisplay.innerHTML = score;
+
            columnOfThree.forEach((index) => {
              squares[index].style.backgroundColor = "";
            });
@@ -149,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const firstRow = [0, 1, 2, 3, 4, 5, 6, 7];
                     const isFirstRow = firstRow.includes(i);
                     if (isFirstRow && squares[i].style.backgroundColor === '') {
-                         letRandomColor = Math.floor(Math.random() * candyColors.length);
+                         let randomColor = Math.floor(Math.random() * candyColors.length);
                          squares[i].style.backgroundColor = candyColors[randomColor];
                     }
                }
@@ -177,7 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 squares[index].style.backgroundColor === decideColor && !isBlank
             )
           ) {
-            score += 4;
+               score += 4;
+            scoreDisplay.innerHTML = score;
+
             rowOfFour.forEach((index) => {
               squares[index].style.backgroundColor = "";
             });
@@ -199,7 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 squares[index].style.backgroundColor === decideColor && !isBlank
             )
           ) {
-            score += 4;
+               score += 4;
+               scoreDisplay.innerHTML = score;
             columnOfFour.forEach((index) => {
               squares[index].style.backgroundColor = "";
             });
