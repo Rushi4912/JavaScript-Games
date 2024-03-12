@@ -87,4 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
           }
        console.log(this.id, "dragEnd");
      }
+
+
+     function checkRowForThree(){
+
+          for (let i = 0; i < 61; i++){
+
+               let rowOfThree = [i, i + 1, i + 2];
+               let decideColor = squares[i].style.backgroundColor;
+               const isBlank = squares[i].style.backgroundColor = '';
+
+               if (rowOfThree.every(index => squares[index].style.backgroundColor === decideColor && !isBlank)) {
+                    
+                    rowOfThree.forEach(index => {
+                         squares[index].style.backgroundColor = '';
+                    })
+               }
+          }
+     }
 })
