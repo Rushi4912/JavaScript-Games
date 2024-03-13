@@ -1,29 +1,67 @@
-body{
+body {
+  background-image: url("images/candy-crush-background-2.png");
+}
+.container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.score-board {
+  width: 150px;
+  height: 70px;
+  border: 1px solid black;
+  margin-right: 50px;
+  border-radius: 20px;
+  background-color: navajowhite;
+}
+.score-board h3 {
+  position: absolute;
+  top: 39%;
+  left: 28%;
+  font-family: "Courier New", Courier, monospace;
+}
+.score-board h1 {
+  position: absolute;
+  top: 43%;
+  left: 28.5%;
+  font-size: 25px;
+}
+@keyframes changeColor {
+  0% {
+    background: -webkit-linear-gradient(to right, #c9ffbf, #ffafbd);
+  background: linear-gradient(to right, #c9ffbf, #ffafbd); 
+  }
+  25% {
+     background: #fbd3e9; 
+     background: -webkit-linear-gradient(to right, #fbd3e9, #bb377d);
+     background: linear-gradient(to right, #fbd3e9, #bb377d);
+  }
+  50% {
+    background: #b993d6;
+    background: -webkit-linear-gradient(to right, #b993d6, #8ca6db); 
+    background: linear-gradient(to right, #b993d6, #8ca6db); 
+  }
+  100% {
+    background: #D3959B;  
+    background: -webkit-linear-gradient(to right, #BFE6BA, #D3959B);  
+   background: linear-gradient(to right, #BFE6BA, #D3959B); 
 
-     background-image: url("images/candy-crush-background-2.png");
-     display: flex;
-     justify-content: center;
-     align-items: center;
+  }
 }
-.score-board{
-     width: 100px;
-     height: 100px;
-     border: 1px solid black;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     margin-right: 50px;
+.grid {
+  height: 560px;
+  width: 560px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  border: 3px solid purple;
+  border-radius: 15px;
+  animation: changeColor 3s infinite alternate; 
+  transition: background-color 0.5s;
+
+  /* background-color: blue; */
 }
-.grid{
- height: 560px;
- width: 560px;
- display: flex;
- flex-wrap: wrap;
- margin-top: 100px;
- /* background-color: blue; */
-}
-.grid  div{
-     height: 70px;
-     width: 70px;
+.grid div {
+  height: 70px;
+  width: 70px;
 }

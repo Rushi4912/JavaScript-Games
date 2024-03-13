@@ -67,28 +67,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
           console.log(this.id, 'dragDrop');
      }
+     
+    
      function dragEnd() {
-          // for valid move
+       // Check if the move is valid
+       let validMoves = [
+         colorIdBeingDragged - 1,
+         colorIdBeingDragged - width,
+         colorIdBeingDragged + 1,
+         colorIdBeingDragged + width,
+       ];
 
-          let validMoves = [
-            squareIdBeingDragged - 1,
-            squareIdBeingDragged - width,
-            squareIdBeingDragged + 1,
-            squareIdBeingDragged  + width,
-          ];
-          let validMove = validMoves.includes(squareIdBeingReplaced);
+       let validMove = validMoves.includes(colorIdBeingReplaced);
 
-          if (squareIdBeingReplaced && validMove) {
-               
-               squareIdBeingReplaced = null;
-          } else if (squareIdBeingReplaced && !validMove) {
-               squares[squareIdBeingReplaced].style.backgroundImage = colorBeingReplaced;
-               squares[squareIdBeingDragged].style.backgroundImage = colorBeingDragged;
-          } else {
-               squares[squareIdBeingDragged].style.backgroundImage = colorBeingDragged;
-          }
+       if (colorIdBeingReplaced && validMove) {
+         colorIdBeingReplaced = null;
+       } else if (colorIdBeingReplaced && !validMove) {
+         // If the move is not valid, revert the colors
+         squares[colorIdBeingReplaced].style.backgroundImage =
+           colorBeingReplaced;
+         squares[colorIdBeingDragged].style.backgroundImage = colorBeingDragged;
+       } else {
+         // If there was no replacement, simply revert the dragged candy
+         squares[colorIdBeingDragged].style.backgroundImage = colorBeingDragged;
+       }
+
+       // Reset variables
+       colorBeingDragged = null;
+       colorBeingReplaced = null;
+       colorIdBeingDragged = null;
+       colorIdBeingReplaced = null;
+
        console.log(this.id, "dragEnd");
      }
+
+
 
 
      // checking for matches 
