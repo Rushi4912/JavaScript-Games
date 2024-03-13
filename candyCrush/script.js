@@ -44,11 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
   squares.forEach((square) => square.addEventListener("dragleave", dragLeave));
   squares.forEach((square) => square.addEventListener("drop", dragDrop));
 
-  function dragStart() {
-    colorBeingDragged = this.style.backgroundImage;
-    colorIdBeingDragged = parseInt(this.id);
-    console.log(this.id, "dragStart");
-  }
+  // function dragStart() {
+  //   colorBeingDragged = this.style.backgroundImage;
+  //   colorIdBeingDragged = parseInt(this.id);
+  //   console.log(this.id, "dragStart");
+  // }
 
   function dragOver(e) {
     e.preventDefault();
