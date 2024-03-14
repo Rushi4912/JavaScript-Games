@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function dragOver(e) {
     e.preventDefault();
-    console.log(this.id, "dragOver");
+    // console.log(this.id, "dragOver");
   }
   function dragEnter(e) {
     e.preventDefault();
