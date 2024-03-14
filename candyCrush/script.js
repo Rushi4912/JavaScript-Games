@@ -145,9 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
             squares[index].style.backgroundImage === decideColor && !isBlank
         )
       ) {
-        // score += 3;
-        // scoreDisplay.innerHTML = score;
-        // playMatchSound();
+        score += 3;
+        scoreDisplay.innerHTML = score;
+        playMatchSound();
 
         columnOfThree.forEach((index) => {
           squares[index].style.backgroundImage = "";
