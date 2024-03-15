@@ -211,9 +211,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // check for column of four
   function checkColumnForFour() {
     for (let i = 0; i < 47; i++) {
-      // let columnOfFour = [i, i + width, i + width * 2, i + width * 3];
-      // let decideColor = squares[i].style.backgroundImage;
-      // const isBlank = squares[i].style.backgroundImage === "";
+      let columnOfFour = [i, i + width, i + width * 2, i + width * 3];
+      let decideColor = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
 
       if (
         columnOfFour.every(
