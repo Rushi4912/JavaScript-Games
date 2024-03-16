@@ -179,8 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkRowForFour() {
     for (let i = 0; i < 60; i++) {
       let rowOfFour = [i, i + 1, i + 2, i + 3];
-      // let decideColor = squares[i].style.backgroundImage;
-      // const isBlank = squares[i].style.backgroundImage === "";
+      let decideColor = squares[i].style.backgroundImage;
+      const isBlank = squares[i].style.backgroundImage === "";
       const notValid = [
         5, 6, 7, 13, 14, 15, 21, 22, 23, 29, 30, 31, 37, 38, 39, 45, 46, 47, 53,
         54, 55,
