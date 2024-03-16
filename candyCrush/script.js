@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (
         rowOfFour.every(
           (index) =>
-            // squares[index].style.backgroundImage === decideColor && !isBlank
+            squares[index].style.backgroundImage === decideColor && !isBlank
         )
       ) {
         score += 4;
