@@ -1,5 +1,5 @@
 body{
-     background-color: #434343;
+     background-color: #414141;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -13,10 +13,10 @@ body{
 }
 
 .board-1{
-     width: 650px;
-     height: 650px;
-     border: 5px solid gray;
-     border-radius: 15px;
+    
+     border: 10px solid #595f43;
+     border-radius: 30px;
+     box-shadow: 0 0 0 10px #595f43;
 }
 .board-2{
      width: 645px;
@@ -30,4 +30,11 @@ body{
      height: 640px;
      border: 5px solid #878787;
      border-radius: 6px;
+}
+#game-board{
+     border-radius: 100px;
+     display: grid;
+     grid-template-columns: repeat(20,20px);
+     grid-template-rows: repeat(20,20px);
+     margin: 5px;
 }
