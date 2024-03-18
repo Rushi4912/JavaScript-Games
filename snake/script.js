@@ -9,5 +9,12 @@ function draw(){
 }
 // draw snake
 function drawSnake() {
-     
+     snake.forEach((segment) => {
+          const snakeElement = createGameElement('div', 'snake');
+     });
+}
+
+function createGameElement(tag,className) {
+     const element = document.createElement(tag);
+     element.className = className;
 }
