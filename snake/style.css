@@ -7,6 +7,9 @@ body{
      gap: 40px;
      
 }
+.snake{
+     background-color: #595f43;
+}
 .score{
      display: flex;
      justify-content: center;
