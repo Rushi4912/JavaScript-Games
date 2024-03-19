@@ -4,7 +4,7 @@ let snake = [{ x: 10, y: 10 }];
 
 function draw(){
 
-     board.innerHTML = '';
+     // board.innerHTML = '';
      drawSnake();
 }
 // draw snake
@@ -20,6 +20,7 @@ function createGameElement(tag,className) {
      const element = document.createElement(tag);
      element.className = className;
      return element;
+
 }
 function setPosition(element, position) {
      element.style.gridColumn = position.x;
