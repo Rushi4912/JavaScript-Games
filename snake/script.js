@@ -4,7 +4,7 @@ let snake = [{ x: 10, y: 10 }];
 
 function draw(){
 
-     // board.innerHTML = '';
+     board.innerHTML = '';
      drawSnake();
 }
 // draw snake
