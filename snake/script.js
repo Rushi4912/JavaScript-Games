@@ -24,6 +24,6 @@ function createGameElement(tag,className) {
 }
 function setPosition(element, position) {
      element.style.gridColumn = position.x;
-     // element.style.gridRow = position.y;
+     element.style.gridRow = position.y;
 }
 draw();
