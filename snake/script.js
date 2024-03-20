@@ -1,6 +1,8 @@
 // define html element
 const board = document.getElementById("game-board");
 let snake = [{ x: 10, y: 10 }];
+let food = generateFood();
+let gridSize = 20;
 
 function draw(){
 
@@ -27,4 +29,16 @@ function setPosition(element, position) {
      element.style.gridColumn = position.x;
      element.style.gridRow = position.y;
 }
-draw();
+// draw();
+
+// draw function food
+function drawFood() {
+     const foodElement = createGameElement('div', 'food');
+     setPosition(foodElement, food);
+     board.appendChild(foodElement);
+}
+
+function generateFood() {
+     let x = Math.floor(Math.random()*gridSize) + 1;
+     return x;
+}
