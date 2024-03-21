@@ -10,8 +10,6 @@ function draw() {
   drawFood();
 }
 
-draw();
-
 // Draw snake
 function drawSnake() {
   snake.forEach((segment) => {
@@ -40,11 +38,10 @@ function drawFood() {
 }
 
 function generateFood() {
-  let x, y;
-  do {
-    x = Math.floor(Math.random() * gridSize) + 1;
-    y = Math.floor(Math.random() * gridSize) + 1;
-  } while (snake.some((segment) => segment.x === x && segment.y === y)); // Ensure food doesn't overlap with snake
+  const x = Math.floor(Math.random() * gridSize) + 1;
+  const y = Math.floor(Math.random() * gridSize) + 1;
   return { x, y };
 }
- // Call draw function to display the snake and food
+// Call draw function to display the snake and food
+ 
+draw();
