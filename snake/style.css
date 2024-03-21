@@ -55,10 +55,14 @@ body{
  display: none;
 }
 .snake{
-     border: #5a5a5a 1px dotted;
+     width: 100%;
+     height: 100%;
+      border: #5a5a5a 1px dotted;
 
 }
 .food{
+     width: 100%;
+     height: 100%;
      background-color: #dedede;
      border: #999 5px solid;
 }

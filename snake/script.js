@@ -1,11 +1,14 @@
 // Define html element
-
+ const board = document.getElementById("game-board");
+ let snake = [{ x: 10, y: 10 }];
+ let food = generateFood();
+ let gridSize = 20;
 document.addEventListener('DOMContentLoaded', () => {
   draw();
 });
 
 document.addEventListener('keydown', (event) => {
-  const key = key.event;
+  const key = event.key;
   const head = { ...snake[0] };
 
   switch (key) {
@@ -25,7 +28,7 @@ document.addEventListener('keydown', (event) => {
       return;
   }
   
-  if (head.x < 1 || head.x > gridSize || head.y < 1 || head.y > 1) {
+  if (head.x < 1 || head.x > 20 || head.y < 1 || head.y > 20) {
     
     return;
   }
@@ -33,11 +36,6 @@ document.addEventListener('keydown', (event) => {
   snake.pop();
   draw();
 });
-
-  const board = document.getElementById("game-board");
-  let snake = [{ x: 10, y: 10 }];
-  let food = generateFood();
-  let gridSize = 20;
   function draw() {
     board.innerHTML = "";
     drawSnake();
@@ -56,24 +54,24 @@ document.addEventListener('keydown', (event) => {
     element.className = className;
     return element;
   }
-  function setPosition(element, position) {
-    element.style.gridColumn = position.x;
-    element.style.gridRow = position.y;
-  }
+function setPosition(element, position) {
+  element.style.gridColumnStart = position.x;
+  element.style.gridRowStart = position.y;
+}
+
 
   // Draw food
-  function drawFood() {
-    const foodElement = createGameElement("div", "food");
+function drawFood() {
+ 
+   const foodElement = createGameElement("div", "food");
+   console.log("in drawFood function")
     setPosition(foodElement, food);
     board.appendChild(foodElement);
+  console.log("after drawFood function");
+  
   }
   function generateFood() {
     const x = Math.floor(Math.random() * gridSize) + 1;
     const y = Math.floor(Math.random() * gridSize) + 1;
     return { x, y };
   }
- 
-function move() {
-      
-
-}
