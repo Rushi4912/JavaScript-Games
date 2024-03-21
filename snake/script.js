@@ -1,8 +1,8 @@
 // Define html element
- const board = document.getElementById("game-board");
- let snake = [{ x: 10, y: 10 }];
- let food = generateFood();
- let gridSize = 20;
+const board = document.getElementById("game-board");
+let snake = [{ x: 10, y: 10 }];
+let gridSize = 20;
+let food = generateFood();
 document.addEventListener('DOMContentLoaded', () => {
   draw();
 });
@@ -36,42 +36,41 @@ document.addEventListener('keydown', (event) => {
   snake.pop();
   draw();
 });
-  function draw() {
-    board.innerHTML = "";
-    drawSnake();
-    drawFood();
-  }
+  
+function draw() {
+  board.innerHTML = "";
+  drawSnake();
+  drawFood();
+}
 
-  function drawSnake() {
-    snake.forEach((segment) => {
-      const snakeElement = createGameElement("div", "snake");
-      setPosition(snakeElement, segment);
-      board.appendChild(snakeElement);
-    });
-  }
-  function createGameElement(tag, className) {
-    const element = document.createElement(tag);
-    element.className = className;
-    return element;
-  }
+function drawSnake() {
+  snake.forEach((segment) => {
+    console.log("inside in drawSnake function");
+    const snakeElement = createGameElement("div", "snake");
+    setPosition(snakeElement, segment);
+    board.appendChild(snakeElement);
+  });
+}
+function createGameElement(tag, className) {
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+}
 function setPosition(element, position) {
   element.style.gridColumnStart = position.x;
   element.style.gridRowStart = position.y;
 }
 
-
-  // Draw food
+// Draw food
 function drawFood() {
- 
-   const foodElement = createGameElement("div", "food");
-   console.log("in drawFood function")
-    setPosition(foodElement, food);
-    board.appendChild(foodElement);
+  const foodElement = createGameElement("div", "food");
+  console.log("in drawFood function");
+  setPosition(foodElement, food);
+  board.appendChild(foodElement);
   console.log("after drawFood function");
-  
-  }
-  function generateFood() {
-    const x = Math.floor(Math.random() * gridSize) + 1;
-    const y = Math.floor(Math.random() * gridSize) + 1;
-    return { x, y };
-  }
+}
+function generateFood() {
+  const x = Math.floor(Math.random() * gridSize) + 1;
+  const y = Math.floor(Math.random() * gridSize) + 1;
+  return { x, y };
+}
