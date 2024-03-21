@@ -3,6 +3,37 @@
 document.addEventListener('DOMContentLoaded', () => {
   draw();
 });
+
+document.addEventListener('keydown', (event) => {
+  const key = key.event;
+  const head = { ...snake[0] };
+
+  switch (key) {
+    case 'ArrowUp':
+      head.y -= 1;
+      break;
+    case 'ArrowDown':
+      head.y += 1;
+      break;
+    case 'ArrowLeft':
+      head.x -= 1;
+      break;
+    case 'ArrowRight':
+      head.x += 1;
+      break;
+    default:
+      return;
+  }
+  
+  if (head.x < 1 || head.x > gridSize || head.y < 1 || head.y > 1) {
+    
+    return;
+  }
+  snake.unshift(head);
+  snake.pop();
+  draw();
+});
+
   const board = document.getElementById("game-board");
   let snake = [{ x: 10, y: 10 }];
   let food = generateFood();
@@ -41,15 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const y = Math.floor(Math.random() * gridSize) + 1;
     return { x, y };
   }
-
-
-// Draw snake
-
-
-
-
-
-
-// Call draw function to display the snake and food
  
-// draw();
+function move() {
+      
+
+}
