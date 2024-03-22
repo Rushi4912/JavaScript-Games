@@ -81,6 +81,15 @@ function moveSnake(){
     resetGame();
     return;
   }
+  // check if the snake has hit itself 
+  for (let i = 1; i < snake.length; i++){
+
+    if (head.x === snake[i].x && head.y === snake[i].y) {
+      score, innerHTML = 0;
+      resetGame();
+      return;
+    }
+  }
 
   if (head.x === food.x && head.y === food.y) {
     // generate random food
@@ -104,6 +113,6 @@ function resetGame() {
 }
 
 function updateScore() {
-  let temp = score.innerHTML;
+  let temp = parseInt(score.innerHTML);
   score.innerHTML = temp + 5;
 }
