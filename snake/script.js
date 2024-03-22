@@ -3,40 +3,34 @@ const board = document.getElementById("game-board");
 let snake = [{ x: 10, y: 10 }];
 let gridSize = 20;
 let food = generateFood();
-document.addEventListener('DOMContentLoaded', () => {
+let gameSpeed = 200;
+document.addEventListener("DOMContentLoaded", () => {
   draw();
+  setInterval(moveSnake, gameSpeed);
 });
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener("keydown", (event) => {
   const key = event.key;
   const head = { ...snake[0] };
 
   switch (key) {
-    case 'ArrowUp':
-      head.y -= 1;
+    case "ArrowUp":
+
       break;
-    case 'ArrowDown':
+    case "ArrowDown":
       head.y += 1;
       break;
-    case 'ArrowLeft':
+    case "ArrowLeft":
       head.x -= 1;
       break;
-    case 'ArrowRight':
+    case "ArrowRight":
       head.x += 1;
       break;
     default:
       return;
   }
-  
-  if (head.x < 1 || head.x > 20 || head.y < 1 || head.y > 20) {
-    
-    return;
-  }
-  snake.unshift(head);
-  snake.pop();
-  draw();
 });
-  
+
 function draw() {
   board.innerHTML = "";
   drawSnake();
@@ -73,4 +67,24 @@ function generateFood() {
   const x = Math.floor(Math.random() * gridSize) + 1;
   const y = Math.floor(Math.random() * gridSize) + 1;
   return { x, y };
+}
+
+
+function moveSnake(){
+  const head = { ...snake[0] };
+  head.x += direction.x;
+  head.y += direction.y;
+  if (head.x < 1 || head.x > 20 || head.y < 1 || head.y > 20) {
+    return;
+  }
+
+  if (head.x === food.x && head.y === food.y) {
+    // generate random food
+    food = generateFood();
+    snake.unshift(head);
+  } else {
+    snake.unshift(head);
+    snake.pop();
+  }
+  draw();
 }
