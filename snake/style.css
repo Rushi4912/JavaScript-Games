@@ -10,7 +10,7 @@ body{
 .snake{
      background-color: #414141;
 }
-.score{
+.scores{
      display: flex;
      justify-content: center;
      gap: 30vw;

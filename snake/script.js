@@ -5,6 +5,7 @@ let gridSize = 20;
 let food = generateFood();
 let direction = { x: 0, y: 0 };
 let gameSpeed = 200;
+let score = document.getElementById('score');
 document.addEventListener("DOMContentLoaded", () => {
   draw();
   setInterval(moveSnake, gameSpeed);
@@ -76,6 +77,7 @@ function moveSnake(){
   head.x += direction.x;
   head.y += direction.y;
   if (head.x < 1 || head.x > 20 || head.y < 1 || head.y > 20) {
+    resetGame();
     return;
   }
 
@@ -88,4 +90,17 @@ function moveSnake(){
     snake.pop();
   }
   draw();
+}
+
+function resetGame() {
+  snake = [{ x: 10, y: 10 }];
+  food = generateFood();
+  direction = { x: 0, y: 0 };
+
+  // update the board 
+  draw();
+}
+
+function upDateScore() {
+  
 }
