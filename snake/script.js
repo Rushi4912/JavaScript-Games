@@ -77,6 +77,7 @@ function moveSnake(){
   head.x += direction.x;
   head.y += direction.y;
   if (head.x < 1 || head.x > 20 || head.y < 1 || head.y > 20) {
+    score.innerHTML = 0;
     resetGame();
     return;
   }
@@ -85,6 +86,7 @@ function moveSnake(){
     // generate random food
     food = generateFood();
     snake.unshift(head);
+    updateScore();
   } else {
     snake.unshift(head);
     snake.pop();
@@ -96,11 +98,12 @@ function resetGame() {
   snake = [{ x: 10, y: 10 }];
   food = generateFood();
   direction = { x: 0, y: 0 };
-
+   
   // update the board 
   draw();
 }
 
-function upDateScore() {
-  
+function updateScore() {
+  let temp = score.innerHTML;
+  score.innerHTML = temp + 5;
 }
