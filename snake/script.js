@@ -3,6 +3,7 @@ const board = document.getElementById("game-board");
 let snake = [{ x: 10, y: 10 }];
 let gridSize = 20;
 let food = generateFood();
+let direction = { x: 0, y: 0 };
 let gameSpeed = 200;
 document.addEventListener("DOMContentLoaded", () => {
   draw();
@@ -15,16 +16,16 @@ document.addEventListener("keydown", (event) => {
 
   switch (key) {
     case "ArrowUp":
-
+  direction = { x: 0, y: -1 };
       break;
     case "ArrowDown":
-      head.y += 1;
+      direction = { x: 0, y: 1 };
       break;
     case "ArrowLeft":
-      head.x -= 1;
+      direction = { x: -1, y: 0 };
       break;
     case "ArrowRight":
-      head.x += 1;
+      direction = { x:1, y:0 };
       break;
     default:
       return;
