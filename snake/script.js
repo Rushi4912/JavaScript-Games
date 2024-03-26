@@ -74,8 +74,8 @@ function generateFood() {
 
 function moveSnake(){
   const head = { ...snake[0] };
-  // head.x += direction.x;
-  // head.y += direction.y;
+  head.x += direction.x;
+  head.y += direction.y;
   if (head.x < 1 || head.x > 20 || head.y < 1 || head.y > 20) {
     score.innerHTML = 0;
     resetGame();
