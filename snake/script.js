@@ -104,9 +104,9 @@ function moveSnake(){
 }
 
 function resetGame() {
-  snake = [{ x: 10, y: 10 }];
-  food = generateFood();
-  direction = { x: 0, y: 0 };
+  // snake = [{ x: 10, y: 10 }];
+  // food = generateFood();
+  // direction = { x: 0, y: 0 };
    
   // update the board 
   draw();
