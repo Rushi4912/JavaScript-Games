@@ -93,9 +93,9 @@ function moveSnake(){
 
   if (head.x === food.x && head.y === food.y) {
     // generate random food
-    // food = generateFood();
-    // snake.unshift(head);
-    // updateScore();
+    food = generateFood();
+    snake.unshift(head);
+    updateScore();
   } else {
     snake.unshift(head);
     snake.pop();
