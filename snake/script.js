@@ -113,6 +113,6 @@ function resetGame() {
 }
 
 function updateScore() {
-  // let temp = parseInt(score.innerHTML);
+  let temp = parseInt(score.innerHTML);
   score.innerHTML = temp + 5;
 }
