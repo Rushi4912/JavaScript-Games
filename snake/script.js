@@ -84,9 +84,9 @@ function moveSnake(){
   // check if the snake has hit itself 
   for (let i = 1; i < snake.length; i++){
 
-    if (head.x === snake[i].x && head.y === snake[i].y) {
-      score, innerHTML = 0;
-      resetGame();
+    // if (head.x === snake[i].x && head.y === snake[i].y) {
+    //   score, innerHTML = 0;
+    //   resetGame();
       return;
     }
   }
