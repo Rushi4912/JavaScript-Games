@@ -42,8 +42,6 @@ function draw() {
 function drawSnake() {
   snake.forEach((segment) => {
     console.log("inside in drawSnake function");
-    // const snakeElement = createGameElement("div", "snake");
-    // setPosition(snakeElement, segment);
     board.appendChild(snakeElement);
   });
 }
