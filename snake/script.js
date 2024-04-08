@@ -52,6 +52,7 @@ function createGameElement(tag, className) {
 }
 function setPosition(element, position) {
   element.style.gridColumnStart = position.x;
+  element, style.gridRowStart = position.y;
 }
 
 // Draw food
