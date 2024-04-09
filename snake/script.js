@@ -16,7 +16,7 @@ document.addEventListener("keydown", (event) => {
   const head = { ...snake[0] };
 
   switch (key) {
-    case "ArrowUp":
+    case "ArrowUp": 
   direction = { x: 0, y: -1 };
       break;
     case "ArrowDown":
@@ -52,8 +52,8 @@ function createGameElement(tag, className) {
 }
 function setPosition(element, position) {
   element.style.gridColumnStart = position.x;
-  element, style.gridRowStart = position.y;
-}
+  element.style.gridRowStart = position.y;
+} 
 
 // Draw food
 function drawFood() {
@@ -64,8 +64,8 @@ function drawFood() {
   console.log("after drawFood function");
 }
 function generateFood() {
-  const x = Math.floor(Math.random() * gridSize) + 1;
-  const y = Math.floor(Math.random() * gridSize) + 1;
+  // const x = Math.floor(Math.random() * gridSize) + 1;
+  // const y = Math.floor(Math.random() * gridSize) + 1;
   return { x, y };
 }
 
@@ -100,7 +100,6 @@ function moveSnake(){
   }
   draw();
 }
-
 function resetGame() {
   snake = [{ x: 10, y: 10 }];
   food = generateFood();

@@ -57,6 +57,9 @@ body{
 .snake{
      width: 100%;
      height: 100%;
+     grid-column-start: 1;
+      grid-row-start: 1; 
+      background-color: green;
       border: #5a5a5a 1px dotted;
 
 }
