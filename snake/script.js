@@ -64,8 +64,8 @@ function drawFood() {
   console.log("after drawFood function");
 }
 function generateFood() {
-  // const x = Math.floor(Math.random() * gridSize) + 1;
-  // const y = Math.floor(Math.random() * gridSize) + 1;
+  const x = Math.floor(Math.random() * gridSize) + 1;
+  const y = Math.floor(Math.random() * gridSize) + 1;
   return { x, y };
 }
 
