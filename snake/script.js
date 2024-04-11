@@ -46,9 +46,9 @@ function drawSnake() {
   });
 }
 function createGameElement(tag, className) {
-  // const element = document.createElement(tag);
-  // element.className = className;
-  // return element;
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
 }
 function setPosition(element, position) {
   element.style.gridColumnStart = position.x;
