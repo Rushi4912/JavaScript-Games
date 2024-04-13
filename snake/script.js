@@ -4,7 +4,7 @@ let snake = [{ x: 10, y: 10 }];
 let gridSize = 20;
 let food = generateFood();
 let direction = { x: 0, y: 0 };
-let gameSpeed = 216;
+let gameSpeed = 200;
 let score = document.getElementById('score');
 document.addEventListener("DOMContentLoaded", () => {
   draw();
